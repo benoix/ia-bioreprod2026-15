@@ -1,0 +1,15 @@
+[project]
+name = "figure2a-reproduction"
+version = "0.1.0"
+description = "Reproduce Figure 2A of Kelliher et al. 2016 (PLOS Genetics)"
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
+
+[dependencies]
+python = ">=3.10,<3.13"
+matplotlib = ">=3.7"
+numpy = ">=1.24"
+openpyxl = ">=3.1"
+
+[tasks]
+figure2a = "python main.py data/pgen.1006453.s002.xlsx -o figure2A_reproduction.png"
