@@ -43,7 +43,5 @@ package-dir = { "" = "src" }
 [tool.ruff]
 line-length = 88
 extend-ignore = ["E203", "W503"]
-select = ["E", "F", "I", "Q", "R", "S", "B", "C" ]
-
-[tool.ruff.exclude]
-paths = [".git", "build", "dist", "__pycache__", ".pytest_cache"]
+select = ["E", "F", "I", "Q", "R", "S", "B", "C"]
+exclude = [".git", "build", "dist", "__pycache__", ".pytest_cache"]
