@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel", "build"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "figure2a-reproduction"
+version = "0.1.0"
+description = "Generate periodic gene expression heatmaps reproducing Figure 2A from Kelliher et al. 2016."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Bioinformatics Project" },
+]
+keywords = ["gene expression", "heatmap", "time series", "open science", "bioinformatics"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+    "openpyxl>=3.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.0.280",
+    "build>=0.10",
+    "pdoc>=12.0",
+]
+
+[project.scripts]
+"figure2a-reproduction" = "figure2arepro.cli:main"
+
+[tool.setuptools]
+packages = ["figure2arepro"]
+package-dir = { "" = "src" }
+
+[tool.ruff]
+line-length = 88
+extend-ignore = ["E203", "W503"]
+select = ["E", "F", "I", "Q", "R", "S", "B", "C" ]
+
+[tool.ruff.exclude]
+paths = [".git", "build", "dist", "__pycache__", ".pytest_cache"]
